@@ -1,0 +1,38 @@
+{
+  "name": "prueba-imaginamos",
+  "version": "1.0.0",
+  "description": "prueba imaginamos",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build:development": "webpack --mode development",
+    "build:production": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marino0104/prueba-imaginamos.git"
+  },
+  "author": "Marino Londoño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marino0104/prueba-imaginamos/issues"
+  },
+  "homepage": "https://github.com/marino0104/prueba-imaginamos#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react-hot-loader": "^4.12.8",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
