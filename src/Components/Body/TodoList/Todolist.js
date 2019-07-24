@@ -16,7 +16,9 @@ class Todolist extends Component {
       todoItems.push(todoSingle);
     });
     this.state = {
-      itemsList: todoItems
+      itemsList: todoItems,
+      messageState: false,
+      messageContent: ""
     };
   }
   state = {
@@ -26,23 +28,42 @@ class Todolist extends Component {
   handleChange = name => e => {
     e.preventDefault();
     this.setState({
-      [name]: e.target.value
+      [name]: e.target.value,
+      messageState: false,
+      messageContent: ""
     });
   };
   handleAddTodo = () => {
     let id = todoItems.length;
     let { task, priority } = this.state;
-    let todoSingle = {
-      id: id,
-      task: task,
-      priority: priority
-    };
-    todoItems.push(todoSingle);
-    this.setState({
-      itemsList: todoItems,
-      task: "",
-      priority: ""
-    });
+    if (task) {
+      let todoSingle = {};
+      if (priority) {
+        todoSingle = {
+          id: id,
+          task: task,
+          priority: priority
+        };
+      } else {
+        todoSingle = {
+          id: id,
+          task: task,
+          priority: "Baja"
+        };
+      }
+
+      todoItems.push(todoSingle);
+      this.setState({
+        itemsList: todoItems,
+        task: "",
+        priority: ""
+      });
+    } else {
+      this.setState({
+        messageState: true,
+        messageContent: "Por favor, complete el campo tarea"
+      });
+    }
   };
   handleDel = id => e => {
     e.preventDefault();
@@ -56,7 +77,13 @@ class Todolist extends Component {
     }
   };
   render() {
-    let { itemsList, task, priority } = this.state;
+    let {
+      itemsList,
+      task,
+      priority,
+      messageContent,
+      messageState
+    } = this.state;
     let values = {
       task,
       priority
@@ -68,6 +95,8 @@ class Todolist extends Component {
             handleChange={this.handleChange}
             handleAddTodo={this.handleAddTodo}
             values={values}
+            messageContent={messageContent}
+            messageState={messageState}
           />
         </div>
         <div className="container mt-5">

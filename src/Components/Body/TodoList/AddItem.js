@@ -27,7 +27,7 @@ class AddItem extends Component {
   };
   render() {
     let { itemAdd } = this.state;
-    let { handleChange, values } = this.props;
+    let { handleChange, values, messageContent, messageState } = this.props;
     return (
       <div>
         {!itemAdd ? (
@@ -74,6 +74,13 @@ class AddItem extends Component {
               </div>
             </div>
           </div>
+        )}
+        {messageState ? (
+          <div className="alert alert-danger mt-2" role="alert">
+            {messageContent}
+          </div>
+        ) : (
+          ""
         )}
       </div>
     );
