@@ -1,0 +1,24 @@
+body{
+    background-color: #f2f2f2
+}
+.login-container {
+    background-color: #fff;
+    max-width: 900px;
+    padding: 30px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 20px rgba(0,0,0,.1);
+    width: 100%;
+}
+footer.page-footer.font-small.blue.pt-4 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    background-color: aliceblue;
+}
+.todolist{
+    background-color: #fff
+}

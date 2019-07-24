@@ -12,6 +12,17 @@ const todoList = [
     priority: "Media"
   }
 ];
+const users = [
+  {
+    user: "admin",
+    password: "admin"
+  },
+  {
+    user: "user",
+    password: "1234"
+  }
+];
 module.exports = {
-  todoList
+  todoList,
+  users
 };
